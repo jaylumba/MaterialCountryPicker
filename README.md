@@ -30,7 +30,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-  implementation 'jaylumba.phonecountrypicker:phonecountrypicker:0.2.2.1'
+  implementation 'jaylumba.phonecountrypicker:phonecountrypicker:0.2.2.2'
 }
 ```
 

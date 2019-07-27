@@ -91,7 +91,7 @@ class CountryPickerAdapter(val context: Context,
                 } else {
                     val filteredList = ArrayList<Country>()
                     for (country in countries) {
-                        if (country.name!!.toLowerCase().startsWith(charString)) {
+                        if (country.name!!.toLowerCase().startsWith(charString.toLowerCase())) {
                             //check for country code
                             //                            if (showCountryCode && country.getCode().toLowerCase().startsWith(charString)) {
                             //                                filteredList.add(country);
