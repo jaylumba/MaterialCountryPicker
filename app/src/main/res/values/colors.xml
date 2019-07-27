@@ -3,7 +3,4 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-
-    <!--Override to change item color-->
-    <!--<color name="mcp_item_text_color"></color>-->
 </resources>

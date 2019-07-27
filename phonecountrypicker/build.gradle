@@ -1,8 +1,10 @@
-apply plugin: 'com.android.application'
-
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.jaylumba'
+version = "$phonecountrypicker_version"
 
 androidExtensions {
     experimental = true
@@ -10,14 +12,18 @@ androidExtensions {
 
 android {
     compileSdkVersion 28
+
+
     defaultConfig {
-        applicationId "com.jaylumba.phonecountrypicker"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,32 +34,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     androidExtensions {
         experimental = true
     }
 
-    dataBinding {
-        enabled = true
-    }
+
 }
 
 dependencies {
-    def nav_version = "2.1.0-alpha06"
-    def lifecycle_version = "2.2.0-alpha02"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.core:core-ktx:1.2.0-alpha02'
-
-    //NAVIGATION
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    implementation "androidx.work:work-runtime-ktx:2.0.1"
-
-    implementation project(path: ':phonecountrypicker')
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation project(path: ':fastscroll')
+    implementation project(path: ':sectionedrecycleradapter')
+}
+repositories {
+    mavenCentral()
 }

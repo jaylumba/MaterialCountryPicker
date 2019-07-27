@@ -30,7 +30,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-  implementation 'com.github.vardemin.MaterialCountryPicker:materialcountrypicker:0.2.1'
+  implementation 'jaylumba.MaterialCountryPicker:materialcountrypicker:0.2.1'
 }
 ```
 
@@ -38,7 +38,7 @@ dependencies {
 In your XML layout include the TimelineView as follows:
 
 ```xml
-<com.github.vardemin.materialcountrypicker.PhoneNumberEditText
+<jaylumba.materialcountrypicker.PhoneNumberEditText
         android:id="@+id/countryPicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,12 +86,12 @@ object PhoneEditConverter {
 Import type
 ```xml
     <data>
-        <import type="com.github.vardemin.countrypicker.PhoneEditConverter"/>
+        <import type="jaylumba.countrypicker.PhoneEditConverter"/>
     </data>
 ```
 Link converter method
 ```xml
-<com.github.vardemin.materialcountrypicker.PhoneNumberEditText
+<jaylumba.materialcountrypicker.PhoneNumberEditText
         android:id="@+id/editPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

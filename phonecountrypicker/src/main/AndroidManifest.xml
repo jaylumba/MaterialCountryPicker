@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.github.jaylumba.phonecountrypicker">
+    <application>
+        <activity
+                android:name="com.github.jaylumba.phonecountrypicker.CountryPickerActivity"
+                android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+</manifest>
