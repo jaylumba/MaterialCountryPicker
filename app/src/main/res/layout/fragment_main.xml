@@ -42,6 +42,7 @@
                     app:cp_fastScrollerHandleColor="@color/colorAccent"
                     app:cp_rememberLastSelection="true"
                     app:cp_showCountryCodeInView="false"
+                    app:cp_showFullScreeDialog="true"
                     android:text='@={PhoneEditConverter.toString(editPhone, mainViewModel.paramsMap["phone"])}'/>
 
             <!--<com.google.android.material.textfield.TextInputEditText
