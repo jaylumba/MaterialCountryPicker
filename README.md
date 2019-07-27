@@ -30,7 +30,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-  implementation 'jaylumba.phonecountrypicker:phonecountrypicker:0.2.1'
+  implementation 'jaylumba.phonecountrypicker:phonecountrypicker:0.2.2.1'
 }
 ```
 
@@ -50,6 +50,8 @@ In your XML layout include the TimelineView as follows:
         app:cp_fastScrollerBubbleColor="@color/colorPrimary"
         app:cp_fastScrollerBubbleTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:cp_fastScrollerHandleColor="@color/colorAccent"
+        app:cp_listItemTextColor="@color/colorAccent"
+        app:cp_fullScreenToolbarColor="@color/colorAccent"
         app:cp_preferredCountries="us,ru,am"
         app:cp_rememberLastSelection="true"
         app:cp_setCountryCodeBorder="true"
@@ -100,6 +102,8 @@ Link converter method
         app:cp_fastScrollerBubbleColor="@color/colorPrimary"
         app:cp_fastScrollerBubbleTextAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
         app:cp_fastScrollerHandleColor="@color/colorAccent"
+        app:cp_listItemTextColor="@color/colorAccent"
+        app:cp_fullScreenToolbarColor="@color/colorAccent"
         app:cp_rememberLastSelection="true"
         app:cp_showCountryCodeInView="false"
         android:text='@={PhoneEditConverter.toString(editPhone, mainViewModel.paramsMap["phone"])}'/>
@@ -126,6 +130,8 @@ List of xml attribues that are available in PhoneNumberEdittext
 |cp_defaultCountryName|Use this to specify the dafult country you want to show in the PickerView|Empty
 |cp_preferredCountries|Use this to enter comma seperated list of prefferd countries.|Empty
 |cp_fastScrollerBubbleColor| Sets the color of the fast scroller bubble color| #5e64ce
+|cp_listItemTextColor| Sets the color of the list item text| @android:color/secondary_text_light
+|cp_fullScreenToolbarColor| Sets the background color of the fullscreen toolbar| #008577
 |cp_fastScrollerBubbleTextAppearance|Sets the testAppearance of the fastScroller| TextAppearance.AppCompat.Medium|
 |cp_fastScrollerHandleColor|Sets the fastscroller handle color| #8f93d1
 
