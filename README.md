@@ -1,8 +1,8 @@
-# MaterialCountryPicker
+# PhoneCountryPicker
 Country (ISO/phone code) picker library based on EditText (TextInputEditText). [Fresh port to kotlin androidx of https://github.com/jerryOkafor/CountryPicker]
 Why edittext? - Ready implementation for material input field. Just wrap this widget with TextInputLayout.
 
-[![](https://jitpack.io/v/vardemin/MaterialCountryPicker.svg)](https://jitpack.io/#vardemin/MaterialCountryPicker)
+[![](https://jitpack.io/v/jaylumba/PhoneCountryPicker.svg)](https://jitpack.io/#jaylumba/PhoneCountryPicker)
 
 ## Showcase
 
@@ -15,7 +15,7 @@ Why edittext? - Ready implementation for material input field. Just wrap this wi
 
 **Using Gradle**
 
-MaterialCountryPicker is currently available in on Jitpack so add the following line before every other thing if you have not done that already.
+PhoneCountryPicker is currently available in on Jitpack so add the following line before every other thing if you have not done that already.
 
 ```gradle
 allprojects {
@@ -30,7 +30,7 @@ Then add the following line
 
 ``` gradle
 dependencies {
-  implementation 'jaylumba.MaterialCountryPicker:materialcountrypicker:0.2.1'
+  implementation 'jaylumba.phonecountrypicker:phonecountrypicker:0.2.1'
 }
 ```
 
@@ -38,7 +38,7 @@ dependencies {
 In your XML layout include the TimelineView as follows:
 
 ```xml
-<jaylumba.materialcountrypicker.PhoneNumberEditText
+<jaylumba.phonecountrypicker.PhoneNumberEditText
         android:id="@+id/countryPicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,12 +86,12 @@ object PhoneEditConverter {
 Import type
 ```xml
     <data>
-        <import type="jaylumba.countrypicker.PhoneEditConverter"/>
+        <import type="jaylumba.phonecountrypicker.PhoneEditConverter"/>
     </data>
 ```
 Link converter method
 ```xml
-<jaylumba.materialcountrypicker.PhoneNumberEditText
+<jaylumba.phonecountrypicker.PhoneNumberEditText
         android:id="@+id/editPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -131,4 +131,4 @@ List of xml attribues that are available in PhoneNumberEdittext
 
 ## License
 
-CountryPicker is distributed under the MIT license. [See LICENSE](https://github.com/vardemin/MaterialCountryPicker/blob/master/LICENSE.md) for details.
+CountryPicker is distributed under the MIT license. [See LICENSE](https://github.com/vardemin/PhoneCountryPicker/blob/master/LICENSE.md) for details.
