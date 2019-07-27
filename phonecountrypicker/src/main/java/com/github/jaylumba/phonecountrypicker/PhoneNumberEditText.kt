@@ -235,11 +235,15 @@ class PhoneNumberEditText : TextInputEditText, CountryPickerDialog.OnCountrySele
                 //scroller handle color
                 fastScrollerHandleColor = a.getColor(R.styleable.PhoneNumberEditText_cp_fastScrollerHandleColor, 0)
 
-                listItemTextColor = a.getColor(R.styleable.PhoneNumberEditText_cp_listItemTextColor,
-                    ContextCompat.getColor(context, R.color.mcp_item_text_color))
+                listItemTextColor = a.getColor(
+                    R.styleable.PhoneNumberEditText_cp_listItemTextColor,
+                    ContextCompat.getColor(context, R.color.mcp_item_text_color)
+                )
 
-                fullScreenToolbarColor = a.getColor(R.styleable.PhoneNumberEditText_cp_fullScreenToolbarColor,
-                    ContextCompat.getColor(context, R.color.colorPrimary))
+                fullScreenToolbarColor = a.getColor(
+                    R.styleable.PhoneNumberEditText_cp_fullScreenToolbarColor,
+                    ContextCompat.getColor(context, R.color.colorPrimary)
+                )
 
                 //scroller text appearance
                 fastScrollerBubbleTextAppearance =
@@ -614,18 +618,24 @@ class PhoneNumberEditText : TextInputEditText, CountryPickerDialog.OnCountrySele
             bundle.putBoolean(CountryPicker.EXTRA_SHOW_COUNTRY_CODE_IN_LIST, isShowCountryCodeInList)
             intent.putExtras(bundle)
 
-            try {
-                (context as Activity).startActivityForResult(intent, CountryPicker.PICKER_REQUEST_CODE)
-            } catch (e: ClassCastException) {
-                e.printStackTrace()
+            if (onStartActivityCallback != null) {
+                onStartActivityCallback!!.onStartActivity(intent, CountryPicker.PICKER_REQUEST_CODE)
+            } else {
                 try {
-                    onStartActivityCallback!!.onStartActivity(intent, CountryPicker.PICKER_REQUEST_CODE)
-                }catch (ex: java.lang.Exception){
-                    ex.printStackTrace()
+                    (context as Activity).startActivityForResult(intent, CountryPicker.PICKER_REQUEST_CODE)
+                } catch (e: ClassCastException) {
+                    e.printStackTrace()
                     CountryPickerDialog.openPickerDialog(
-                        context, this, isShowCountryCodeInList,
-                        isSearchAllowed, isDialogKeyboardAutoPopup, isShowFastScroller,
-                        fastScrollerBubbleColor, fastScrollerHandleColor, listItemTextColor, fastScrollerBubbleTextAppearance
+                        context,
+                        this,
+                        isShowCountryCodeInList,
+                        isSearchAllowed,
+                        isDialogKeyboardAutoPopup,
+                        isShowFastScroller,
+                        fastScrollerBubbleColor,
+                        fastScrollerHandleColor,
+                        listItemTextColor,
+                        fastScrollerBubbleTextAppearance
                     )
                 }
             }
@@ -692,11 +702,11 @@ class PhoneNumberEditText : TextInputEditText, CountryPickerDialog.OnCountrySele
         }
     }
 
-    public fun setOnStartActivityCallback(callback: OnStartActivityCallback){
+    public fun setOnStartActivityCallback(callback: OnStartActivityCallback) {
         onStartActivityCallback = callback
     }
 
-    interface OnStartActivityCallback{
+    interface OnStartActivityCallback {
         fun onStartActivity(intent: Intent, requestCode: Int)
     }
 
